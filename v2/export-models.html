@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>스티커가 붙은 기기 · 3D 모델 저장</title>
+ <style>
+  *{box-sizing:border-box}body{margin:0;background:#f1f4ef;color:#233d37;font-family:system-ui,'Malgun Gothic',sans-serif}header{padding:24px 30px;background:#fff;border-bottom:1px solid #d8e1d7}header a{color:#2d6f60;font-weight:700;text-decoration:none}h1{font-size:25px;margin:12px 0 8px}p{line-height:1.65;color:#57685e;margin:0}main{max-width:1450px;margin:auto;display:grid;grid-template-columns:330px 1fr;gap:22px;padding:24px}aside{background:#fff;border:1px solid #dbe3d8;border-radius:20px;padding:22px;align-self:start}.device{padding:14px 0;border-bottom:1px solid #e8ede5}.device:first-of-type{padding-top:0}.device strong{display:block;font-size:17px}.device code{color:#5c786a;font-size:14px;display:block;margin:6px 0 11px}.actions,.views{display:flex;flex-wrap:wrap;gap:7px}button{font:inherit;border:1px solid #c7d6ca;background:#f6f9f3;color:#294e40;padding:10px 12px;border-radius:10px;cursor:pointer}button:hover{background:#e9f1e3}button.export{background:#36795f;border-color:#36795f;color:#fff}button:disabled{cursor:wait;opacity:.55}button.active{box-shadow:inset 0 0 0 2px #3d7a61;background:#e4efdc}.notes{font-size:13px;line-height:1.7;color:#677568;margin-top:17px}#status{margin-top:16px;min-height:56px;font-size:14px;line-height:1.6;color:#335f4b}.previews{display:grid;grid-template-columns:1fr 1fr;gap:18px;min-width:0}.panel{background:#fff;border:1px solid #dbe3d8;border-radius:20px;overflow:hidden;min-width:0}.panel h2{font-size:17px;margin:20px 20px 12px}.panel p,.views{margin:0 20px 18px}.panel p{font-size:13px}.wide{grid-column:1/-1}#devicePreview{height:360px;position:relative;background:radial-gradient(circle at 50% 38%,#fffdf4,#e0e9dd)}#world{height:350px;position:relative;background:#e4ebda;overflow:hidden}canvas{display:block;width:100%;height:100%}#labels{position:absolute;inset:0;pointer-events:none}.object-label{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;font-size:11px;white-space:nowrap;padding:5px 9px;background:#fffdf4e8}.object-label.selected{background:#f5dca0}.room-tools{padding:14px 20px;display:flex;gap:8px}#caption{font-weight:600;color:#335b48}ul{padding-left:21px;font-size:14px;line-height:1.9;color:#526357;margin:18px 20px 24px}@media(max-width:900px){main{grid-template-columns:1fr;padding:16px}.previews{grid-template-columns:1fr}.wide{grid-column:auto}#world{height:300px}aside{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}aside h2,.notes,#status{grid-column:1/-1}h1{font-size:22px}}@media(max-width:500px){aside{display:block}header{padding:20px}#devicePreview{height:300px}.object-label{display:none}}
+ </style>
+ <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/"}}</script>
+</head>
+<body>
+ <header><a href="./index.html">← 연수 진행실로 돌아가기</a><h1>스티커가 붙은 기기, 그대로 저장하기</h1><p>수업에서 보는 실제 3D 모델을 GLB로 저장합니다. 뒷면·하판의 자산번호 스티커도 파일에 포함됩니다.</p></header>
+ <main>
+  <aside>
+   <h2 style="font-size:18px;margin:0 0 18px">기기 4종</h2>
+   <div class="device"><strong>아이패드</strong><code>IP-A001 · 뒷면 스티커</code><div class="actions"><button data-select="ipad" disabled>살펴보기</button><button class="export" data-export="ipad" disabled>GLB 저장</button></div></div>
+   <div class="device"><strong>갤럭시패드</strong><code>TB-B002 · 뒷면 스티커</code><div class="actions"><button data-select="galaxy" disabled>살펴보기</button><button class="export" data-export="galaxy" disabled>GLB 저장</button></div></div>
+   <div class="device"><strong>크롬북</strong><code>CB-C003 · 뒷면 + 하판</code><div class="actions"><button data-select="chromebook" disabled>살펴보기</button><button class="export" data-export="chromebook" disabled>GLB 저장</button></div></div>
+   <div class="device"><strong>윈도우북</strong><code>NB-D004 · 뒷면 + 하판</code><div class="actions"><button data-select="windows" disabled>살펴보기</button><button class="export" data-export="windows" disabled>GLB 저장</button></div></div>
+   <div class="device"><strong>펼친 관리대장</strong><code>교육용 가상 기기 기록</code><button id="exportLedger" class="export" disabled>관리대장 GLB 저장</button></div><div id="status" role="status" aria-live="polite">교실과 기기를 불러오는 중…</div>
+   <p class="notes">저장 버튼을 누를 때만 파일을 만듭니다. 모든 자산번호는 연수용 예시입니다. 아이패드 원본과 교실 원본은 그대로 보관하며, 이 페이지에서는 스티커를 붙인 파생 모델을 저장합니다.</p>
+  </aside>
+  <section class="previews" aria-label="3D 기기 미리보기">
+   <div class="panel">
+    <h2 id="caption">아이패드 · IP-A001</h2>
+    <div class="views"><button data-side="front" class="active" disabled>앞면</button><button data-side="back" disabled>뒷면</button><button data-side="bottom" disabled>아래에서</button></div>
+    <div id="devicePreview"><canvas id="inspectCanvas" aria-label="선택 기기 입체 미리보기"></canvas></div>
+    <p>드래그로 회전하고 휠로 확대할 수 있어요. 태블릿 자산번호는 뒷면, 노트북 자산번호는 뒷면과 하판에 있어요.</p>
+   </div>
+   <div class="panel">
+    <h2>GLB에 포함되는 것</h2>
+    <ul><li>선택한 기기 1대의 입체 메시와 재질</li><li>화면 로고 텍스처</li><li>교육용 자산번호 스티커 텍스처</li><li>미터 단위, Y축 위쪽의 모델 좌표</li></ul>
+    <p>교실·작업대·미리보기 조명·관리대장은 기기 파일에 포함되지 않습니다. 기기의 월드 위치를 원점으로 옮겨 다른 3D 편집기에서 바로 사용할 수 있게 저장합니다.</p>
+   </div>
+   <div class="panel wide"><h2>학교지원실</h2><div id="world"><canvas id="schoolCanvas" aria-label="학교지원실 입체 미리보기"></canvas><div id="labels"></div></div><div class="room-tools"><button id="roomView">교실 전체</button><button id="benchView">작업대</button></div></div>
+  </section>
+ </main>
+ <script type="module">
+  import {createSchoolWorld} from './world.js';
+  import {GLTFExporter} from './vendor/GLTFExporter.js';
+  const names={ipad:'아이패드',galaxy:'갤럭시패드',chromebook:'크롬북',windows:'윈도우북'};
+  const status=document.querySelector('#status'),exporter=new GLTFExporter();let world,busy=false;
+  function choose(id){if(!world)return;world.select(id);document.querySelector('#caption').textContent=names[id]+' · '+world.assetNumbers[id];document.querySelectorAll('[data-select]').forEach(b=>b.classList.toggle('active',b.dataset.select===id));}
+  function download(data,name){const blob=new Blob([data],{type:'model/gltf-binary'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}
+  async function save(id){
+   if(!world||busy)return;busy=true;document.querySelectorAll('[data-export]').forEach(b=>b.disabled=true);choose(id);status.textContent=names[id]+'의 스티커와 재질을 GLB로 만드는 중…';
+   try{const model=world.models[id].clone(true);model.position.set(0,0,0);model.rotation.y=0;model.name='Labeled_'+world.assetNumbers[id];model.userData={deviceId:id,assetNumber:world.assetNumbers[id],purpose:'Training example; no real student data',units:'meters'};const data=await exporter.parseAsync(model,{binary:true,onlyVisible:true,maxTextureSize:1024});if(!(data instanceof ArrayBuffer)||new DataView(data).getUint32(0,true)!==0x46546c67)throw new Error('GLB 파일 형식을 확인하지 못했습니다.');const name='labeled_'+world.assetNumbers[id]+'.glb';download(data,name);status.textContent=name+' · '+(data.byteLength/1024).toFixed(0)+' KB · 다운로드를 요청했어요.';document.body.dataset.lastExport=id;document.body.dataset.lastExportBytes=String(data.byteLength);}
+   catch(error){status.textContent='내보내기 오류: '+error.message;console.error(error);}
+   finally{busy=false;document.querySelectorAll('[data-export]').forEach(b=>b.disabled=false);}
+  }
+  document.querySelector('#exportLedger').onclick=async()=>{if(!world||busy)return;busy=true;const b=document.querySelector('#exportLedger');b.disabled=true;try{const model=world.ledgerModel.clone(true);model.position.set(0,0,0);model.rotation.y=0;const data=await exporter.parseAsync(model,{binary:true,onlyVisible:true,maxTextureSize:1024});download(data,'open_school_ledger.glb');status.textContent='open_school_ledger.glb · 관리대장 다운로드를 요청했어요.';document.body.dataset.lastExport='ledger';}catch(e){status.textContent=e.message;}finally{busy=false;b.disabled=false;}};
+  document.querySelectorAll('[data-select]').forEach(b=>b.onclick=()=>choose(b.dataset.select));
+  document.querySelectorAll('[data-export]').forEach(b=>b.onclick=()=>save(b.dataset.export));
+  document.querySelectorAll('[data-side]').forEach(b=>b.onclick=()=>{world?.inspectView(b.dataset.side);document.querySelectorAll('[data-side]').forEach(x=>x.classList.toggle('active',x===b));});
+  try{world=await createSchoolWorld(choose);document.querySelectorAll('[data-select],[data-export],[data-side],#exportLedger').forEach(b=>b.disabled=false);choose('ipad');status.textContent='준비 완료. 기기와 관찰 방향을 고른 뒤 GLB 저장을 눌러 주세요.';document.body.dataset.appReady='true';}
+  catch(error){status.textContent='모델을 불러오지 못했어요: '+error.message;console.error(error);document.body.dataset.appReady='error';}
+ </script>
+</body>
+</html>
