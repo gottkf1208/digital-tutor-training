@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#edf2ed"><title>디지털튜터의 하루 · 선생님, 이것도 되나요?</title><meta name="description" content="직접 만든 3D 교실에서 시작하는 90초 이야기와 세 가지 판단. 경기 디지털튜터 1일차 오후 연수 도입."><link rel="stylesheet" href="day.css"><script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script></head>
+<body>
+<header class="topbar"><a href="./" class="brand"><span class="brandmark">DT</span><span>디지털튜터 연수<small>경기 디지털튜터 · 1일차 오후</small></span></a><div class="toptools"><button id="backHome" hidden>처음으로</button><button id="guideOpen">강사 진행 팁</button><button id="sound" aria-pressed="false">효과음 꺼짐</button><button id="full">전체 화면 ↗</button></div></header>
+<main id="experience" data-screen="home">
+<div class="chapterline"><span class="eyebrow">A DAY IN THE LIFE</span><span class="chaptertitle">디지털튜터의 하루</span><span class="edition">교안 4 · 5 · 6차시</span></div>
+<div class="stage-grid">
+<section class="visual" aria-label="3D 이야기 무대">
+<canvas id="dayCanvas" aria-label="직접 만든 3D 교실과 기기. 장면에 따라 기기 뒷면, 아이패드, 크롬북을 가까이 보여 줍니다."></canvas>
+<div class="scene-hud"><span class="location"><i></i><b id="location">경기희망중 · 기기 지원실</b></span><span class="time" id="storyTime">08:25</span></div>
+<div id="worldNotice" role="status">교실 문을 여는 중…</div>
+<div id="sceneLabel" class="scene-label"><span>오늘의 무대</span><b>작은 교실, 세 가지 선택.</b></div>
+<div id="evidence" class="evidence" hidden></div>
+<div id="sceneTools" class="scene-tools" hidden><button id="turnDevice">반대쪽 보기 ↻</button><span>3D 실물 · 교육용 예시</span></div>
+<div class="world-caption" id="worldCaption">교안 사례를 시각화한 3D 도입 자료</div>
+</section>
+<section class="story-panel" id="storyPanel" aria-label="이야기와 선택">
+<div id="panelBody"></div>
+</section>
+</div>
+<nav class="story-rail" aria-label="장면 이동"><button data-scene="0"><span>01</span><div><small>08:30 · 배정</small><b>번호가 다른 기기</b></div><i></i></button><button data-scene="1"><span>02</span><div><small>09:10 · 수업 지원</small><b>사라진 수업 앱</b></div><i></i></button><button data-scene="2"><span>03</span><div><small>15:40 · 회수</small><b>없는 초기화 버튼</b></div><i></i></button><div class="rail-end"><span id="completion">세 요청을 잇는 한 가지 습관</span><b>확인 → 기록 → 연결</b></div></nav>
+<div class="playback" id="playback" hidden><button id="playPause" aria-label="일시정지">Ⅱ 일시정지</button><div class="track"><div id="progress"></div></div><span id="elapsed">00:00 / 01:30</span><button id="nextScene">다음 장면 →</button><button id="restart">처음으로</button></div>
+<footer><span>1일차 오후 사례를 하루로 압축한 가상 이야기 · 실제 학생 정보 없음</span><a href="./">연수 운영 화면 열기 →</a></footer>
+</main>
+<dialog id="guide"><div class="dialoghead"><span class="eyebrow">이 화면만 켜고 시작하세요</span><button id="guideClose" aria-label="진행 팁 닫기">×</button></div><h2>첫 5분, 이렇게 시작해요.</h2><p class="guide-intro">“여러분, 오늘은 수업을 지원하는 디지털튜터가 되어 보겠습니다. 첫 요청에서 무엇부터 확인하면 좋을까요?”</p><ol class="runlist"><li><time>0:00–1:30</time><div><b>90초 이야기 보기</b><p>자막과 3D 장면이 자동으로 넘어갑니다. 음성 없이도 진행할 수 있어요.</p></div></li><li><time>1:30–3:45</time><div><b>세 가지 선택을 함께</b><p>문항당 45초. 10초 개인 생각 → 15초 옆 사람과 이유 → 20초 함께 정리. 선택은 강사가 대표로 클릭해요.</p></div></li><li><time>3:45–5:00</time><div><b>한 문장 듣고 교안으로</b><p>“어떤 선택에서 가장 망설였나요?” 한두 명의 이야기를 듣고 4차시 배정 활동으로 넘어가세요.</p></div></li></ol><div class="guide-note"><b>바로 퀴즈로 시작해도 좋아요.</b><p>‘함께 판단하기’를 누르면 장면마다 멈춥니다. 30초 타이머는 선택 사항이고, 시간이 끝나도 답이 자동으로 공개되지 않습니다.</p></div><details><summary>교안 근거와 표현 범위</summary><p>제공된 1일차 신규·재교육 교안의 4차시 배정 자료(GH-0137 시리얼 불일치), 5차시 iPad 앱 누락, 6차시 크롬북 초기화 요청을 재구성했습니다. 실제 업무 순서나 표준 시간표를 뜻하지 않습니다.</p><p>MDM 그룹이 모든 앱 누락의 원인은 아닙니다. 초기화 제한과 배포 권한도 학교·기기에 따라 다릅니다. 표시된 시리얼은 비교를 위한 가상 값이며, 3D 화면의 기기 비율·라벨도 교육용 예시입니다.</p><a href="https://goett.kr/sim/v2/" target="_blank" rel="noopener">교안의 기기 지원 실습실 ↗</a></details><p class="keyhint">자동 재생: Space 일시정지 · → 다음 장면 · Esc 전체 화면 나가기</p></dialog>
+<div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+<script type="module" src="day.js"></script>
+</body></html>
