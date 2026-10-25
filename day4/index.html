@@ -1567,14 +1567,14 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "오늘 오후 순서", trans: "cut", note: "12:41–12:42 · 오늘 오후 흐름\nC3에서 만들고(50분), 쉬는 시간 뒤 C4 갤러리워크(35분), C5에서 고치고 내고 돌아봐요(65분).\n\"해커톤처럼 갑니다. 투표도 해요. 다만 순위보다 「내일 학교에서 쓰고 싶은가」를 묻는 투표예요.\" 지금 시각은 화면 오른쪽 위(터미널 장면은 아래 상태 줄)에 늘 떠 있어요.", main: { fn: (function slTmAgenda(api) {
+  { title: "오늘 오후 순서", trans: "cut", note: "12:41–12:42 · 오늘 오후 흐름\n12:40–13:00 준비(선언 · PRD · 모션랩 · 만들 모양) → 13:00–14:00 제작 → 14:00–14:30 갤러리워크(1라운드 · 2라운드) → 14:30–15:00 수정 → 15:00–15:20 팀별 3분 발표 · 정리.\n\"해커톤처럼 갑니다. 투표도 해요. 다만 순위보다 「내일 학교에서 쓰고 싶은가」를 묻는 투표예요.\" 지금 시각은 화면 오른쪽 위(터미널 장면은 아래 상태 줄)에 늘 떠 있어요.", main: { fn: (function slTmAgenda(api) {
   const LABEL = "디지털튜터 양성과정 · 4일차 후반";                                                                    // 아래 상태 줄 글
   const PAGE = "C3 · 12:40";                                                                                // 쪽 번호 (비우면 안 보임)
   const TAB = "~/4일차 — 오늘 오후";                                                                    // 창 위 제목
-  const NOTE = "# 12:40–15:20 · 쉬는 시간 10분 포함";                                                                       // 제목 위 주석 (비우면 안 보임)
-  const TITLE = "오늘 오후의\n세 걸음";                                                                            // 쳐지는 제목 (\n = 줄바꿈)
-  const LEAD = "만들기 → 써 보기 → 고쳐서 내기";                                                                     // 제목 아래 출력 한 줄 (비우면 안 보임)
-  const ITEMS = [["정하고 만들기", "코들 아이디어 → PRD → 제작", "50분"], ["갤러리워크", "설명 없이 써 보게 하기", "35분"], ["고도화", "투표 · 의견 보고 바로 고치기", "30분"], ["완성본 제출", "링크 · 사용 안내 · 첫 주 계획", "10분"], ["돌아보기 · 수료", "나흘의 발자국", "25분"]];   // 순서 [이름, 설명, 시간] 5칸 (이름을 비우면 그 줄이 빠짐)
+  const NOTE = "# 12:40–15:20";                                                                       // 제목 위 주석 (비우면 안 보임)
+  const TITLE = "오늘 오후의\n흐름";                                                                            // 쳐지는 제목 (\n = 줄바꿈)
+  const LEAD = "만들기 → 써 보기 → 고치기 → 보여 주기";                                                                     // 제목 아래 출력 한 줄 (비우면 안 보임)
+  const ITEMS = [["정하고 만들기", "코들 아이디어 → PRD → 제작 60분", "80분"], ["갤러리워크", "1라운드 · 2라운드 15분씩", "30분"], ["수정 · 제출", "투표 · 의견 보고 v2 만들기", "30분"], ["최종 발표 · 정리", "팀별 3분 · 수료", "20분"]];   // 순서 [이름, 설명, 시간] 5칸 (이름을 비우면 그 줄이 빠짐)
   const NOW = 1;                                                                                         // 다 펼친 뒤 고른 표시가 머무는 줄 번호 (0이면 마지막 줄)
   const LOOP = 11;                                                                                       // 미리보기 한 바퀴 길이(초)
   const tk = slTmKit(api), sk = tk.sk, W = tk.W, H = tk.H, u = tk.u, B = tk.B, G = tk.G;
@@ -1639,7 +1639,7 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "C3 시작", trans: "cut", note: "12:42 · C3 시작\n\"코들에 모아 둔 아이디어, 이제 꺼낼 시간이에요. 50분 동안 딱 하나만 만들어요. 완벽한 것보다 쓸 수 있는 첫 버전이 목표예요.\"\n코들 응답(문제 · 만들 모양)을 화면에 띄워 두거나 모둠별로 나눠 두면 다음 장들이 빨라져요.", main: { fn: (function slTmSection(api) {
+  { title: "C3 시작", trans: "cut", note: "12:42 · C3 시작\n\"코들에 모아 둔 아이디어, 이제 꺼낼 시간이에요. 13:00부터 한 시간 동안 딱 하나만 만들어요. 완벽한 것보다 쓸 수 있는 첫 버전이 목표예요.\"\n코들 응답(문제 · 만들 모양)을 화면에 띄워 두거나 모둠별로 나눠 두면 다음 장들이 빨라져요.", main: { fn: (function slTmSection(api) {
   const LABEL = "디지털튜터 양성과정 · 4일차 후반";                     // 아래 상태 줄 글
   const PAGE = "C3 · 12:42";                                 // 쪽 번호 (비우면 안 보임)
   const TAB = "~/4일차/C3-시제품";                         // 창 위 제목
@@ -1647,7 +1647,7 @@ const SLIDES = [
   const NUM = "C3";                                       // 큰 구역 숫자
   const TITLE = "정하고,\n만들기";                    // 구역 제목 (\n = 줄바꿈)
   const CMD2 = "cat 목표.txt";                             // 다음 효과에 쳐지는 명령
-  const DESC = "50분 안에 학교에서 쓸 시제품 하나";                  // 그 명령의 출력 한 줄
+  const DESC = "한 시간 동안 학교에서 쓸 시제품 하나";                  // 그 명령의 출력 한 줄
   const TAGS = ["코들 아이디어", "PRD 네 칸", "만들고 올리기"];      // 출력 꼬리표 3칸 (비우면 빠짐)
   const LOOP = 10;                                        // 미리보기 한 바퀴 길이(초)
   const tk = slTmKit(api), sk = tk.sk, W = tk.W, H = tk.H, u = tk.u, B = tk.B, G = tk.G;
@@ -2429,13 +2429,13 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "제작 22분", trans: "cut", note: "13:00–13:22 · 제작 (이 화면을 띄워 두세요)\n13:10에 1분 멈춤: 옆 모둠에게 화면만 보여 주고 「여기가 헷갈려요」 한 곳을 받아요. 그걸 남은 10분의 첫 수정으로 삼습니다.\n순회 팁: 10분이 지나도 화면이 안 나온 모둠은 종이로 바로 전환. 웹앱·시트에서 오류가 나면 오류 문장을 그대로 AI에게 붙여 넣게 해 주세요.", main: { fn: (function slTmFlow(api) {
+  { title: "제작 60분", trans: "cut", note: "13:00–13:50 · 제작 (이 화면을 띄워 두세요)\n13:25에 1분 멈춤: 옆 모둠에게 화면만 보여 주고 「여기가 헷갈려요」 한 곳을 받아요. 그걸 남은 25분의 첫 수정으로 삼습니다.\n순회 팁: 15분이 지나도 화면이 안 나온 모둠은 종이로 바로 전환. 웹앱·시트에서 오류가 나면 오류 문장을 그대로 AI에게 붙여 넣게 해 주세요.\n따로 잡힌 쉬는 시간이 없으니, 제작 60분 안에서 모둠별로 잠깐씩 쉬게 해 주세요.", main: { fn: (function slTmFlow(api) {
   const LABEL = "디지털튜터 양성과정 · 4일차 후반";                                                                                                 // 아래 상태 줄 글
   const PAGE = "C3 · 13:00";                                                                                                             // 쪽 번호 (비우면 안 보임)
-  const TAB = "git log --graph — 제작 22분";                                                                                             // 창 위 제목
-  const TITLE = "제작 22분, 이렇게 흘러가요";                                                                                                 // 쳐지는 제목
-  const ITEMS = [["만들기", "첫 말 한 줄로 시작 · 13:00"], ["중간 점검", "「여기가 헷갈려요」 · 13:10"], ["다듬기", "한 번에 하나씩 고치기"], ["검증", "처음 보는 눈으로 확인 · 13:22"], ["올리기", "갤러리 모둠 칸에 주소 · 사진"]];   // 단계 [이름, 설명] 5칸 (이름을 비우면 빠짐)
-  const HEAD = "13:30 마감";                                                                                                                // 맨 끝 단계를 가리키는 꼬리표 (비우면 안 보임)
+  const TAB = "git log --graph — 제작 60분";                                                                                             // 창 위 제목
+  const TITLE = "제작 60분, 이렇게 흘러가요";                                                                                                 // 쳐지는 제목
+  const ITEMS = [["만들기", "첫 말 한 줄로 시작 · 13:00"], ["중간 점검", "「여기가 헷갈려요」 · 13:25"], ["다듬기", "한 번에 하나씩 고치기"], ["검증", "처음 보는 눈으로 확인 · 13:50"], ["올리기", "갤러리 모둠 칸에 주소 · 사진"]];   // 단계 [이름, 설명] 5칸 (이름을 비우면 빠짐)
+  const HEAD = "14:00 마감";                                                                                                                // 맨 끝 단계를 가리키는 꼬리표 (비우면 안 보임)
   const LOOP = 11;                                                                                                                    // 미리보기 한 바퀴 길이(초)
   const tk = slTmKit(api), sk = tk.sk, W = tk.W, H = tk.H, u = tk.u, B = tk.B, G = tk.G;
   const ITEMS_ = sk.keep(ITEMS).slice(0, 5), n = ITEMS_.length;
@@ -2524,9 +2524,9 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "검증하고 올리기", trans: "fade", note: "13:22–13:27 · 검증\n확인 세 가지를 모둠 안에서 소리 내어 점검해요. 웹앱은 새 창에서 링크가 열리는지, 캔바·시트는 공유 권한이 \"링크가 있는 사람: 보기\"인지, 영상은 소리 없이도 이해되는지 확인.\n13:27–13:30 · 패들렛 갤러리의 모둠 칸에 주소와 화면 캡처를 올립니다. 제목 예: \"시트 · 기기 대여 장부 자동 정리\", \"안내 영상 · 새 태블릿 켜는 법\".", main: { fn: (function slDvCompare(api) {
+  { title: "검증하고 올리기", trans: "fade", note: "13:50–13:55 · 검증\n확인 세 가지를 모둠 안에서 소리 내어 점검해요. 웹앱은 새 창에서 링크가 열리는지, 캔바·시트는 공유 권한이 \"링크가 있는 사람: 보기\"인지, 영상은 소리 없이도 이해되는지 확인.\n13:55–14:00 · 패들렛 갤러리의 모둠 칸에 주소와 화면 캡처를 올립니다. 제목 예: \"시트 · 기기 대여 장부 자동 정리\", \"안내 영상 · 새 태블릿 켜는 법\".", main: { fn: (function slDvCompare(api) {
   const LABEL = "2026 경기 디지털튜터 양성과정";                 // 위 왼쪽 작은 이름
-  const PAGE = "C3 · 13:22";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
+  const PAGE = "C3 · 13:50";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
   const KICKER = "올리기 전 점검";                         // 제목 위 포인트 색 한 줄
   const TITLE = "확인하고, 올리고";            // 큰 제목
   const LEFT = "확인";                                 // 왼쪽 칸 이름
@@ -2613,16 +2613,16 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "C3 마무리", trans: "cut", note: "13:27–13:30 · C3 마무리\n업로드가 안 된 모둠만 손을 들게 해서 바로 도와주세요. 쉬는 시간 동안 갤러리 칸이 다 찼는지 확인하고, 모바일 투표 QR(링크)을 화면에 띄워 두세요. 투표 목록에 모둠 이름이 다 들어갔는지도 이때 확인합니다.", main: { fn: (function slTmClosing(api) {
+  { title: "C3 마무리", trans: "cut", note: "13:57–14:00 · C3 마무리\n업로드가 안 된 모둠만 손을 들게 해서 바로 도와주세요. 모바일 투표 QR(링크)을 화면에 띄우고, 투표 목록에 모둠 이름이 다 들어갔는지 확인합니다.\n이때 모둠마다 1라운드에 남을 3명과 돌 2명을 미리 정해 두면 14:00에 바로 출발할 수 있어요.", main: { fn: (function slTmClosing(api) {
   const LABEL = "디지털튜터 양성과정 · 4일차 후반";                                         // 아래 상태 줄 글
-  const PAGE = "C3 · 13:27";                                                     // 쪽 번호 (비우면 안 보임)
+  const PAGE = "C3 · 13:57";                                                     // 쪽 번호 (비우면 안 보임)
   const TAB = "~/C3 — exit";                                              // 창 위 제목
-  const TITLE = "올리고,\n쉬어요";                                                   // 쳐지는 큰 인사말 (\n = 줄바꿈)
-  const SUB = "13:40, 갤러리워크로 만나요";                                // 엔터 뒤 한 줄
+  const TITLE = "올렸으면,\n갤러리로";                                                   // 쳐지는 큰 인사말 (\n = 줄바꿈)
+  const SUB = "14:00, 바로 갤러리워크 1라운드";                                // 엔터 뒤 한 줄
   const RECAP = ["PRD 네 칸", "만들 모양 하나", "검증 체크", "갤러리 칸 업로드"];      // 오늘 한 일 4칸 (✓ 목록, 비우면 빠짐)
   const ASK = "올린 주소, 새 창에서 열리나요?";                                                // 다음 효과에 쳐지는 물음 (커서가 기다림)
   const LIST = "# C3에서 한 일";                                                  // 오늘 한 일 목록 위 주석 (비우면 안 보임)
-  const CONTACT = ["쉬는 시간 13:30–13:40", "다음: C4 필드테스트"];                  // 마지막에 나오는 줄 2칸 (비우면 빠짐)
+  const CONTACT = ["1라운드 14:00 · 2라운드 14:15", "다음: C4 필드테스트"];                  // 마지막에 나오는 줄 2칸 (비우면 빠짐)
   const LOOP = 10;                                                            // 미리보기 한 바퀴 길이(초)
   const tk = slTmKit(api), sk = tk.sk, W = tk.W, H = tk.H, u = tk.u, B = tk.B, G = tk.G;
   const RECAP_ = sk.keep(RECAP).slice(0, 4), CONTACT_ = sk.keep(CONTACT).slice(0, 2);
@@ -2690,11 +2690,11 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "C4 시작", trans: "fade", note: "13:40 · C4 시작\n\"학교에 가면 선생님이 옆에서 설명해 줄 수 없어요. 그래서 오늘은 설명 금지입니다.\"", main: { fn: (function slDvSection(api) {
+  { title: "C4 시작", trans: "fade", note: "14:00 · C4 시작 (규칙 안내는 18~21장을 3분 안에)\n\"학교에 가면 선생님이 옆에서 설명해 줄 수 없어요. 그래서 오늘은 설명 금지입니다.\"", main: { fn: (function slDvSection(api) {
   const LABEL = "2026 경기 디지털튜터 양성과정";                 // 위 왼쪽 작은 이름
-  const PAGE = "C4 · 13:40";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
+  const PAGE = "C4 · 14:00";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
   const NUM = "C4";                                   // 장 번호 (태블릿 화면 가득)
-  const KICKER = "4·5차시 · 필드테스트";                       // 제목 위 포인트 색 한 줄
+  const KICKER = "갤러리워크 · 필드테스트";                       // 제목 위 포인트 색 한 줄
   const TITLE = "설명하지 말고\n써 보게 하기";                   // 구역 제목 (\n = 줄바꿈)
   const DESC = "갤러리워크로 다른 모둠의 시제품을 진짜 사용자처럼 써 봐요";     // 다음 효과에 나오는 설명
   const TAGS = ["써 보기", "휴대폰 투표", "바로 고치기"];     // 화면이 스크롤되면 나오는 핵심 낱말 최대 3칸 (비우면 빠짐)
@@ -2756,12 +2756,12 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "갤러리워크 동선", trans: "fade", note: "13:40–13:45 · 동선 안내 (5인 1조)\n전반(13:45–14:00): 3명이 자기 시제품 옆에 남고, 2명이 짝으로 시계 방향 투어. 한 곳에 4분, 종이 울리면 이동해서 세 곳.\n후반(14:00–14:15): 자리를 바꿔요. 전반에 돌던 2명이 돌아와 지킴이, 전반 지킴이 3명이 투어. 이번엔 반시계 방향으로 돌아서 전반과 다른 모둠의 눈을 받게 합니다.\n이렇게 하면 모두가 한 번은 지키고 한 번은 돌아요. 전반 투어조는 다른 모둠에서 본 아이디어를 들고 와서 후반에 지키니까, 고도화 때 아이디어가 섞이는 효과도 있어요.\n모둠 수가 적은 회차는 곳당 시간을 5분으로 늘리고 두 곳만 돌아도 돼요.", main: { fn: (function slDvFlow(api) {
+  { title: "갤러리워크 동선", trans: "fade", note: "14:00–14:03 · 동선 안내 (5인 1조)\n1라운드(14:00–14:15): 3명이 자기 시제품 옆에 남고, 2명이 짝으로 시계 방향 투어. 14:03부터 한 곳에 4분, 종이 울리면 이동해서 세 곳.\n2라운드(14:15–14:30): 자리를 바꿔요. 1라운드에 돌던 2명이 돌아와 지킴이, 1라운드 지킴이 3명이 투어. 이번엔 반시계 방향으로 돌아서 1라운드와 다른 모둠의 눈을 받게 합니다.\n모두가 한 번은 지키고 한 번은 돌아요. 1라운드 투어조는 다른 모둠에서 본 아이디어를 들고 와서 2라운드에 지키니까, 수정 때 아이디어가 섞이는 효과도 있어요.\n모둠 수가 적은 회차는 곳당 5분으로 늘리고 두 곳만 돌아도 돼요.", main: { fn: (function slDvFlow(api) {
   const LABEL = "2026 경기 디지털튜터 양성과정";                 // 위 왼쪽 작은 이름
-  const PAGE = "C4 · 13:40";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
+  const PAGE = "C4 · 14:00";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
   const KICKER = "갤러리워크 동선 · 5인 1조";                      // 제목 위 포인트 색 한 줄
-  const TITLE = "전반엔 셋, 후반엔 둘이 남아요";                      // 큰 제목
-  const ITEMS = [["13:40", "역할 정하기", "전반에 남을 3명 · 돌 2명"], ["13:45", "전반", "3명 남고 2명 투어 · 시계 방향"], ["14:00", "후반", "자리 바꿔 2명 남고 3명 투어"], ["14:15", "결과 열기", "투표 · 의견 · 기록 모으기"]];   // 단계 [때, 이름, 설명] 최대 4칸 (이름을 비우면 빠짐)
+  const TITLE = "1R엔 셋, 2R엔 둘이 남아요";                      // 큰 제목
+  const ITEMS = [["14:00", "규칙 3분", "1R에 남을 3명 · 돌 2명"], ["14:03", "1라운드", "3명 남고 2명 투어 · 시계 방향"], ["14:15", "2라운드", "자리 바꿔 2명 남고 3명 투어"], ["14:30", "결과 열기", "투표 · 의견 · 기록 모으기"]];   // 단계 [때, 이름, 설명] 최대 4칸 (이름을 비우면 빠짐)
   const LOOP = 11;                                    // 미리보기 한 바퀴 길이(초)
   const g = slDvKit(api), sk = g.sk, W = g.W, H = g.H, u = g.u, X = g.X, S = g.S, fg = g.fg, F = g.face;
   const L = ITEMS.filter(x => String(x[1] || '').trim()).slice(0, 4), n = L.length;
@@ -2816,9 +2816,9 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "써 보기 규칙", trans: "fade", note: "13:45 · 지킴이 역할 (원 강의안 C4 써 보기 규칙)\n전반 지킴이 3명은 안내 · 기록 · 질문을 한 명씩 맡아요. 후반 2명은 안내와 질문을 한 사람이, 기록을 한 사람이 맡습니다.\n지킴이가 투어하는 사람보다 많아지는 전반이 위험해요. 셋이 동시에 설명을 시작하면 테스트가 무너지니까, 말은 안내 담당 한 명만. 나머지는 사용자가 멈춰도 끼어들지 말고 적기만 합니다.\n질문은 하나만: 「왜 거기를 누르셨어요?」 그 답이 곧 고칠 곳이에요.", main: { fn: (function slDvPoints(api) {
+  { title: "써 보기 규칙", trans: "fade", note: "14:01 · 지킴이 역할 (원 강의안 C4 써 보기 규칙)\n1라운드 지킴이 3명은 안내 · 기록 · 질문을 한 명씩 맡아요. 2라운드 2명은 안내와 질문을 한 사람이, 기록을 한 사람이 맡습니다.\n지킴이가 투어하는 사람보다 많아지는 1라운드가 위험해요. 셋이 동시에 설명을 시작하면 테스트가 무너지니까, 말은 안내 담당 한 명만. 나머지는 사용자가 멈춰도 끼어들지 말고 적기만 합니다.\n질문은 하나만: 「왜 거기를 누르셨어요?」 그 답이 곧 고칠 곳이에요.", main: { fn: (function slDvPoints(api) {
   const LABEL = "2026 경기 디지털튜터 양성과정";                 // 위 왼쪽 작은 이름
-  const PAGE = "C4 · 13:45";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
+  const PAGE = "C4 · 14:01";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
   const KICKER = "지킴이 규칙 · 설명 금지";                           // 제목 위 포인트 색 한 줄
   const TITLE = "지킴이는 역할을 나눠요";                // 큰 제목
   const APP = "써 보기";                            // 휴대폰 첫 화면의 앱 이름
@@ -2917,9 +2917,9 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "모바일 투표", trans: "cut", note: "13:45 · 모바일 갤러리워크 투표\n종이 쪽지 대신 휴대폰으로 남겨요. 시작 전에 QR(또는 링크)로 다 같이 한 번 접속해 두면 갤러리워크 중에 헤매지 않아요.\n투어하는 사람은 한 곳에서 한 사람씩 직접 써 보고, 그 자리를 떠나기 전에 투표와 한 줄 의견을 남깁니다. 의견은 짧게, 화면 이름을 넣어서. 예) \"첫 화면에 버튼이 두 개라 어디부터 누를지 몰랐어요.\"\n투표 기준은 하나: \"내일 우리 학교에서 쓰고 싶은가\". 오프닝 선언과 이어지는 기준이라 순위 경쟁 분위기가 덜해요.\n투표 결과는 숫자, 지킴이 기록은 이유예요. C5에서 둘을 같이 보게 하세요.", main: { fn: (function slTmPoints(api) {
+  { title: "모바일 투표", trans: "cut", note: "14:02 · 모바일 갤러리워크 투표\n종이 쪽지 대신 휴대폰으로 남겨요. 출발 전에 QR(또는 링크)로 다 같이 한 번 접속해 두면 갤러리워크 중에 헤매지 않아요.\n투어하는 사람은 한 곳에서 한 사람씩 직접 써 보고, 그 자리를 떠나기 전에 투표와 한 줄 의견을 남깁니다. 의견은 짧게, 화면 이름을 넣어서. 예) \"첫 화면에 버튼이 두 개라 어디부터 누를지 몰랐어요.\"\n투표 기준은 하나: \"내일 우리 학교에서 쓰고 싶은가\". 오프닝 선언과 이어지는 기준이라 순위 경쟁 분위기가 덜해요.\n투표 결과는 숫자, 지킴이 기록은 이유예요. 수정 시간에 둘을 같이 보게 하세요.", main: { fn: (function slTmPoints(api) {
   const LABEL = "디지털튜터 양성과정 · 4일차 후반";                                                                                   // 아래 상태 줄 글
-  const PAGE = "C4 · 13:45";                                                                                               // 쪽 번호 (비우면 안 보임)
+  const PAGE = "C4 · 14:02";                                                                                               // 쪽 번호 (비우면 안 보임)
   const TAB = "vote — 모바일 갤러리워크";                                                                                  // 창 위 제목
   const TITLE = "써 보고, 휴대폰으로 남겨요";                                                                                    // 쳐지는 제목 (\n = 줄바꿈)
   const ITEMS = [["그 자리에서", "써 본 곳을 떠나기 전에 바로"], ["투표 기준", "내일 우리 학교에서 쓰고 싶은가"], ["한 줄 의견", "멈춘 곳 · 이렇게 해 보면"], ["사람 말고", "시제품에 대해 남겨요"]];   // 항목 [이름, 예시 한 줄] 4칸 (이름을 비우면 빠짐)
@@ -2967,9 +2967,9 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "멈춘 곳의 한마디", trans: "fade", note: "13:45–14:15 · 갤러리워크 동안 띄워 두기\n\"이 한마디가 나오면 성공이에요. 우리가 놓친 곳을 사용자가 정확히 짚어 준 거니까요.\"\n강사는 순회하며 지킴이가 설명하고 있으면 살짝 멈춰 세우고, 기록 담당이 사용자 말을 적고 있는지 봐 주세요.\n종: 13:49 · 13:53 · 13:57 이동, 14:00 전반 끝(자리 바꾸기) → 14:04 · 14:08 · 14:12 이동, 14:15 후반 끝.", main: { fn: (function slDvQuote(api) {
+  { title: "멈춘 곳의 한마디", trans: "fade", note: "14:03–14:30 · 갤러리워크 동안 띄워 두기\n\"이 한마디가 나오면 성공이에요. 우리가 놓친 곳을 사용자가 정확히 짚어 준 거니까요.\"\n강사는 순회하며 지킴이가 설명하고 있으면 살짝 멈춰 세우고, 기록 담당이 사용자 말을 적고 있는지 봐 주세요.\n종: 14:07 · 14:11 이동, 14:15 1라운드 끝(자리 바꾸기 1분) → 14:16 출발, 14:20 · 14:24 이동, 14:28 투표 마감, 14:30 2라운드 끝.", main: { fn: (function slDvQuote(api) {
   const LABEL = "2026 경기 디지털튜터 양성과정";                 // 위 왼쪽 작은 이름
-  const PAGE = "C4 · 13:45";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
+  const PAGE = "C4 · 14:03";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
   const KICKER = "갤러리워크에서 가장 값진 데이터";                         // 따옴표 위 포인트 색 한 줄
   const QUOTE = "여기 누르면\n뭐가 나와요?";     // 인용 문장 (\n = 줄바꿈)
   const WHO = "사용자가 멈춘 곳의 한마디";                    // 말한 사람 (다음 효과, 비우면 안 보임)
@@ -3037,16 +3037,16 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "C5 시작", trans: "cut", note: "14:15 · C5 시작\n\"이제 투표 결과와 의견이 설계도예요. 30분 동안 v2를 만들고, 10분 안에 내고, 나머지는 우리 이야기로 채워요.\"", main: { fn: (function slTmSection(api) {
+  { title: "C5 시작", trans: "cut", note: "14:30 · C5 시작\n\"이제 투표 결과와 의견이 설계도예요. 30분 동안 v2를 만들고, 15:00에 내고, 팀별로 3분씩 보여 줘요.\"", main: { fn: (function slTmSection(api) {
   const LABEL = "디지털튜터 양성과정 · 4일차 후반";                     // 아래 상태 줄 글
-  const PAGE = "C5 · 14:15";                                 // 쪽 번호 (비우면 안 보임)
+  const PAGE = "C5 · 14:30";                                 // 쪽 번호 (비우면 안 보임)
   const TAB = "~/4일차/C5-완성";                         // 창 위 제목
   const CMD = "cd C5-완성";                               // 처음에 쳐지는 명령
   const NUM = "C5";                                       // 큰 구역 숫자
-  const TITLE = "고쳐서,\n남기기";                    // 구역 제목 (\n = 줄바꿈)
+  const TITLE = "고쳐서,\n보여 주기";                    // 구역 제목 (\n = 줄바꿈)
   const CMD2 = "cat 제출규격.txt";                             // 다음 효과에 쳐지는 명령
-  const DESC = "받은 의견을 다음 버전으로 바꾸고 학교에 들고 갈 완성본을 내요";                  // 그 명령의 출력 한 줄
-  const TAGS = ["고도화 30분", "제출 10분", "돌아보기 · 수료"];      // 출력 꼬리표 3칸 (비우면 빠짐)
+  const DESC = "받은 의견으로 v2를 만들고, 15:00부터 팀별로 3분씩 보여 줘요";                  // 그 명령의 출력 한 줄
+  const TAGS = ["수정 30분", "15:00 제출", "팀별 3분 발표"];      // 출력 꼬리표 3칸 (비우면 빠짐)
   const LOOP = 10;                                        // 미리보기 한 바퀴 길이(초)
   const tk = slTmKit(api), sk = tk.sk, W = tk.W, H = tk.H, u = tk.u, B = tk.B, G = tk.G;
   const TAGS_ = sk.keep(TAGS).slice(0, 3);
@@ -3115,9 +3115,9 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "무엇부터 고칠까", trans: "cut", note: "14:15–14:20 · 고칠 곳 정하기\n모바일 투표의 한 줄 의견과 지킴이 기록을 같은 화면끼리 묶어서 겹친 곳부터 고쳐요(원 강의안: 겹친 쪽지부터). 투표 수가 적어도 실망 금지, 이유가 적힌 의견이 더 값져요. 새 기능 욕심은 \"다음 버전\" 칸에 적어 두기만 합니다.\n실제 학생 정보 연결은 오늘 하지 않아요. 학교가 결정할 일이에요.", main: { fn: (function slTmCompare(api) {
+  { title: "무엇부터 고칠까", trans: "cut", note: "14:30–14:35 · 고칠 곳 정하기\n모바일 투표의 한 줄 의견과 지킴이 기록을 같은 화면끼리 묶어서 겹친 곳부터 고쳐요(원 강의안: 겹친 쪽지부터). 투표 수가 적어도 실망 금지, 이유가 적힌 의견이 더 값져요. 새 기능 욕심은 \"다음 버전\" 칸에 적어 두기만 합니다.\n실제 학생 정보 연결은 오늘 하지 않아요. 학교가 결정할 일이에요.", main: { fn: (function slTmCompare(api) {
   const LABEL = "디지털튜터 양성과정 · 4일차 후반";                                         // 아래 상태 줄 글
-  const PAGE = "C5 · 14:15";                                                     // 쪽 번호 (비우면 안 보임)
+  const PAGE = "C5 · 14:30";                                                     // 쪽 번호 (비우면 안 보임)
   const TAB = "diff — 지금 vs 다음 버전";                                               // 창 위 제목
   const TITLE = "의견, 무엇부터 고칠까";                                          // 쳐지는 제목
   const LEFT = "지금 고칠 것";                                                     // 왼쪽 칸 이름
@@ -3179,9 +3179,9 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "고칠 때 말하는 법", trans: "cut", note: "14:20–14:45 · 고도화 스프린트 25분\n받은 의견 문장을 그대로 AI에게 붙여 넣으면 생각보다 잘 고쳐요. 한 번에 여러 개를 시키면 멀쩡하던 곳이 깨지니 하나씩.\n안내문·영상·시트도 똑같아요: 의견 하나 → 고치기 → 다시 써 보기.\n14:40쯤 \"한 번 더(선택)\": 옆 모둠 한 명에게 고친 화면만 다시 써 보게 해요.", main: { fn: (function slTmPoints(api) {
+  { title: "고칠 때 말하는 법", trans: "cut", note: "14:35–14:55 · 수정 스프린트 20분\n받은 의견 문장을 그대로 AI에게 붙여 넣으면 생각보다 잘 고쳐요. 한 번에 여러 개를 시키면 멀쩡하던 곳이 깨지니 하나씩.\n안내문·영상·시트도 똑같아요: 의견 하나 → 고치기 → 다시 써 보기.\n14:50쯤 \"한 번 더(선택)\": 옆 모둠 한 명에게 고친 화면만 다시 써 보게 해요. 발표할 사람(팀당 1명)도 이때 정해 두면 15:00 교대가 빨라요.", main: { fn: (function slTmPoints(api) {
   const LABEL = "디지털튜터 양성과정 · 4일차 후반";                                                                                   // 아래 상태 줄 글
-  const PAGE = "C5 · 14:20";                                                                                               // 쪽 번호 (비우면 안 보임)
+  const PAGE = "C5 · 14:35";                                                                                               // 쪽 번호 (비우면 안 보임)
   const TAB = "README.md — 고칠 때 말하는 법";                                                                                  // 창 위 제목
   const TITLE = "고칠 때는 이렇게 말해요";                                                                                    // 쳐지는 제목 (\n = 줄바꿈)
   const ITEMS = [["한 번에 하나", "버튼 글자만 크게 해 줘"], ["의견 그대로", "사용자가 여기서 멈췄어, 이유는 이래"], ["되돌리기", "방금 고친 건 취소하고 전으로"], ["버전 남기기", "v1 · v2 이름으로 따로 저장"]];   // 항목 [이름, 예시 한 줄] 4칸 (이름을 비우면 빠짐)
@@ -3229,13 +3229,13 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "완성본 제출 규격", trans: "fade", note: "14:45–14:55 · 완성본 제출 (갤러리 모둠 칸, 14:55 마감)\n① 시제품 링크·파일 1개 (v2) ② 사용 안내 1장: 누가·언제·어떻게 + 화면 캡처 1~2장 ③ 첫 주 실행 계획 1줄: \"다음 주 ○요일, ○○ 선생님께 써 보게 하기\".\n평가 관점(순위가 아니라 피드백 기준): 현장성(학교에서 실제로 반복되는 일인가) · 사용성(설명 없이 쓰이는가) · 안전(가상 데이터, 외부 연결 없음) · 의견 반영(무엇을 왜 고쳤는가).", main: { fn: (function slDvData(api) {
+  { title: "완성본 제출 규격", trans: "fade", note: "14:55–15:00 · 완성본 제출 (갤러리 모둠 칸, 15:00 마감)\n① 시제품 링크·파일 1개 (v2) ② 사용 안내 1장: 누가·언제·어떻게 + 화면 캡처 1~2장 ③ 첫 주 실행 계획 1줄: \"다음 주 ○요일, ○○ 선생님께 써 보게 하기\".\n평가 관점(순위가 아니라 피드백 기준): 현장성(학교에서 실제로 반복되는 일인가) · 사용성(설명 없이 쓰이는가) · 안전(가상 데이터, 외부 연결 없음) · 의견 반영(무엇을 왜 고쳤는가).", main: { fn: (function slDvData(api) {
   const LABEL = "2026 경기 디지털튜터 양성과정";                 // 위 왼쪽 작은 이름
-  const PAGE = "C5 · 14:45";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
+  const PAGE = "C5 · 14:55";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
   const KICKER = "완성본 제출 규격";                   // 제목 위 포인트 색 한 줄
   const TITLE = "완성본은\n이렇게 내요";               // 큰 제목 (\n = 줄바꿈)
   const ITEMS = [["1", "개", "시제품 링크 · 파일"], ["1", "장", "사용 안내"], ["1", "줄", "첫 주 실행 계획"]];   // 숫자 [값, 단위, 이름] 최대 3칸 (값을 비우면 빠짐)
-  const NOTE = "평가 관점: 현장성 · 사용성 · 안전 · 의견 반영";    // 아래 작은 안내 (비우면 안 보임)
+  const NOTE = "15:00 마감 · 평가 관점: 현장성 · 사용성 · 안전 · 의견 반영";    // 아래 작은 안내 (비우면 안 보임)
   const LOOP = 11;                                    // 미리보기 한 바퀴 길이(초)
   const g = slDvKit(api), sk = g.sk, W = g.W, H = g.H, u = g.u, X = g.X, S = g.S, fg = g.fg, F = g.face;
   const L = sk.keep(ITEMS).slice(0, 3), n = L.length;
@@ -3265,7 +3265,7 @@ const SLIDES = [
   const pad = g.device(stage, 'pad', pw), sw = pad.sw, sh = pad.sh, f = sw / 100, v = pad.view;
   g.status(pad, S.text);
   g.st(v, '제출함', f * 4, sh * 0.1, f * 5, 780, S.text, 'letter-spacing:-0.035em;');
-  g.st(v, '갤러리 모둠 칸 · 14:55', f * 4, sh * 0.1 + f * 6.6, f * 2.1, 500, S.sub);
+  g.st(v, '갤러리 모둠 칸 · 15:00', f * 4, sh * 0.1 + f * 6.6, f * 2.1, 500, S.sub);
   const nc = Math.max(1, n), gp = f * 2, cw = (sw - f * 8 - gp * (nc - 1)) / nc, chh = sh * 0.24, cyy = sh * 0.3;
   const cards = L.map((it, i) => {
     const x = f * 4 + i * (cw + gp);
@@ -3317,9 +3317,9 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "시제품 들고 첫 주", trans: "fade", note: "14:50–14:55 · 첫 주 실행 (원 강의안 C5 부록 \"시제품 들고 첫 주\")\n제출 규격의 \"첫 주 실행 계획 1줄\"을 이 흐름에서 골라 쓰게 하세요.\n금요일 칸이 튜터 역할의 경계예요. 실제 학생 정보를 쓰거나 앱을 설치하는 일은 학교가 결정합니다.", main: { fn: (function slDvFlow(api) {
+  { title: "시제품 들고 첫 주", trans: "fade", note: "14:57 · 첫 주 실행 (원 강의안 C5 부록 \"시제품 들고 첫 주\")\n제출 규격의 \"첫 주 실행 계획 1줄\"을 이 흐름에서 골라 쓰게 하세요. 1분이면 충분해요.\n금요일 칸이 튜터 역할의 경계예요. 실제 학생 정보를 쓰거나 앱을 설치하는 일은 학교가 결정합니다.", main: { fn: (function slDvFlow(api) {
   const LABEL = "2026 경기 디지털튜터 양성과정";                 // 위 왼쪽 작은 이름
-  const PAGE = "C5 · 14:50";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
+  const PAGE = "C5 · 14:57";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
   const KICKER = "시제품 들고 첫 주";                      // 제목 위 포인트 색 한 줄
   const TITLE = "다음 주, 이렇게 써요";                      // 큰 제목
   const ITEMS = [["월", "보여 주기", "동료 한 명에게 1분 시연"], ["화 – 수", "써 보게 하기", "실제 사용자 한 명 · 멈춘 곳 기록"], ["목", "고치기", "의견 한 가지 반영"], ["금", "결정 받기", "개인정보 · 설치는 학교와 상의"]];   // 단계 [때, 이름, 설명] 최대 4칸 (이름을 비우면 빠짐)
@@ -3377,9 +3377,81 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "디자인씽킹 돌아보기", trans: "cut", note: "14:55–15:00 · 디자인씽킹 돌아보기\n\"나흘 동안 공감에서 테스트까지 한 바퀴를 돌았어요. 다섯 걸음 가운데 어디가 제일 오래 걸렸나요?\" 한두 분께 물어요.\n1~4일차 발자국 화면은 원 강의안 C5 슬라이드를 이어서 보여 주세요.", main: { fn: (function slTmFlow(api) {
+  { title: "팀별 3분 발표", trans: "cut", note: "15:00–15:17 · 팀별 3분 최종 발표\n발표 순서는 갤러리 모둠 칸 순서대로. 다음 팀은 미리 앞에 나와 링크를 열어 두게 하면 교대 시간이 줄어요.\n3분 타이머를 화면 옆에 켜고, 2분 30초에 손짓으로 알려 주세요. 시연이 핵심이라 \"문제 30초 → 시연 1분 30초 → 고친 것 1분\" 순서를 지키게 합니다.\n팀 수 × 3분이 17분을 넘으면(6팀 초과) 팀당 2분(시연 1분 + 고친 것 1분)으로 줄이세요.", main: { fn: (function slTmAgenda(api) {
+  const LABEL = "디지털튜터 양성과정 · 4일차 후반";                                                                    // 아래 상태 줄 글
+  const PAGE = "C5 · 15:00";                                                                                // 쪽 번호 (비우면 안 보임)
+  const TAB = "~/C5 — 최종 발표";                                                                    // 창 위 제목
+  const NOTE = "# 15:00–15:20 · 팀당 3분 · 타이머 켜기";                                                                       // 제목 위 주석 (비우면 안 보임)
+  const TITLE = "팀별 3분,\n이렇게";                                                                            // 쳐지는 제목 (\n = 줄바꿈)
+  const LEAD = "말보다 화면으로";                                                                     // 제목 아래 출력 한 줄 (비우면 안 보임)
+  const ITEMS = [["문제", "누구의 어떤 불편이었나", "30초"], ["시연", "화면 켜고 직접 보여 주기", "1분 30초"], ["고친 것", "받은 의견 → v2에서 바꾼 점", "1분"], ["다음 팀", "박수 → 바로 교대", ""]];   // 순서 [이름, 설명, 시간] 5칸 (이름을 비우면 그 줄이 빠짐)
+  const NOW = 2;                                                                                         // 다 펼친 뒤 고른 표시가 머무는 줄 번호 (0이면 마지막 줄)
+  const LOOP = 11;                                                                                       // 미리보기 한 바퀴 길이(초)
+  const tk = slTmKit(api), sk = tk.sk, W = tk.W, H = tk.H, u = tk.u, B = tk.B, G = tk.G;
+  const ITEMS_ = sk.keep(ITEMS).slice(0, 5), n = ITEMS_.length;
+  const back = tk.back(), win = tk.win(api.root, TAB), status = tk.status(api.root, LABEL, PAGE), stage = sk.layer(api.root);
+  // 제목 묶음 (가로: 왼쪽 칸 · 그 밖: 위)
+  const side = !tk.tall, cw = side ? B.w * 0.34 : B.w;
+  const note = String(NOTE).trim() ? tk.out(stage, NOTE, { x: B.x + G, y: B.y, size: u * 0.022, alpha: 0.42, fit: cw - G }) : null;
+  const ty = B.y + (note ? u * 0.07 : 0), ts = tk.wide ? u * 0.092 : u * 0.08;
+  const title = tk.type(stage, TITLE, { x: B.x + G, y: ty, size: ts, lh: 1.12, seed: 11, max: 0.75, fit: cw - G });
+  const tCh = tk.chev(stage, B.x, ty + title.size * 0.58, Math.min(G * 0.62, title.size * 0.36));
+  const lead = String(LEAD).trim() ? tk.out(stage, LEAD, { x: B.x + G, y: ty + title.h + u * 0.03, size: u * 0.026, alpha: 0.62, fit: cw - G }) : null;
+  // 목록
+  const lx = side ? B.x + B.w * 0.4 : B.x, lwid = side ? B.x + B.w - lx : B.w;
+  const ly0 = side ? B.y : ty + title.h + (lead ? lead.h + u * 0.03 : 0) + u * 0.06, lh0 = B.y + B.h - ly0;
+  const rh = Math.min(u * 0.128, lh0 / Math.max(1, n)), ly = side ? B.y + (B.h - rh * n) / 2 : ly0;
+  const roomy = rh > u * 0.098, ns = roomy ? u * 0.042 : Math.min(u * 0.042, rh * 0.5), ds = u * 0.023;
+  const sel = tk.div(stage, `position:absolute;left:${lx - u * 0.012}px;top:${ly}px;width:${lwid + u * 0.012}px;height:${rh}px;border-radius:${u * 0.012}px;background:${tk.rgba(tk.fill, tk.dk ? 0.1 : 0.065)};opacity:0;`);
+  const selBar = tk.div(sel, `position:absolute;left:0;top:${rh * 0.22}px;width:${Math.max(2, u * 0.004)}px;height:${rh * 0.56}px;border-radius:2px;background:${tk.fill};`);
+  const rows = ITEMS_.map((it, i) => {
+    const y = ly + i * rh, cy = y + rh * (roomy ? 0.36 : 0.5);
+    const nm = tk.type(stage, it[0], { x: lx + G, y: cy - ns * 0.6, size: ns, weight: 650, lh: 1.2, ls: '-0.03em', seed: 20 + i, max: 0.5, base: 0.045, fit: lwid - G - u * 0.12 });
+    const ch = tk.chev(stage, lx + u * 0.004, cy, ns * 0.5);
+    const num = tk.mark(stage, String(i + 1).padStart(2, '0'), lx, cy, u * 0.02, tk.acT);
+    const ds_ = tk.out(stage, roomy ? it[1] || '' : '', { x: lx + G, y: cy + ns * 0.66, size: ds, alpha: 0.52, fit: lwid - G - u * 0.12 });
+    const tm = tk.out(stage, it[2] || '', { x: 0, y: cy - u * 0.014, size: u * 0.022, alpha: 0.55 });
+    tm.el.style.left = (lx + lwid - tm.w) + 'px';
+    const hr = i < n - 1 ? tk.rule(stage, lx, y + rh, lwid, false, tk.dk ? 0.08 : 0.09) : null;
+    return { nm: nm, ch: ch, num: num, ds: ds_, tm: tm, hr: hr };
+  });
+  const steps = 1 + n, d0 = 1.5, gap = 1.25, rest = NOW >= 1 && NOW <= n ? NOW - 1 : n - 1;
+  function frame(t) {
+    back(t); win.set(1); status(t, 1);
+    const c = tk.cue(t, steps, d0, gap, LOOP), s0 = c.sec(0);
+    if (note) note.set(s0 - 0.05);
+    tCh.set(sk.seg(s0, 0.1, 0.25), c.step === 0 ? 1 : 0);
+    title.set(s0 - 0.22);
+    const ent = 0.22 + title.dur + 0.08;
+    if (lead) lead.set(s0 - ent);
+    const list = [[title, s0 - 0.22]];
+    rows.forEach((r, i) => {
+      const s = c.sec(i + 1), e = 0.12 + r.nm.dur + 0.08;
+      r.ch.set(sk.seg(s, 0, 0.12) * (1 - sk.seg(s, e, e + 0.2)), 1);
+      r.num.set(sk.seg(s, e, e + 0.35));
+      r.nm.set(s - 0.12);
+      r.ds.set(s - e - 0.03, tk.pulse(t, i, n) * c.built);
+      r.tm.set(s - e - 0.1);
+      if (r.hr) r.hr.set(sk.seg(s, e, e + 0.5));
+      list.push([r.nm, s - 0.12]);
+    });
+    tk.carets(list);
+    // 고른 줄 표시: 가장 새 줄로 미끄러지고, 다 펼치면 '지금' 줄로
+    const k = Math.min(c.step, n) - 1;
+    let pos = k <= 0 ? 0 : (k - 1) + sk.expo(sk.seg(c.local, 0, 0.6));
+    if (c.step === steps - 1 && k >= 0 && rest !== k) pos = sk.mix(pos, rest, sk.io(sk.seg(c.local, 1.6, 2.4)));
+    const so = n && c.step >= 1 ? sk.expo(sk.seg(c.sec(1), 0, 0.4)) : 0;
+    sel.style.opacity = so.toFixed(3);
+    sel.style.transform = `translate3d(0,${(pos * rh).toFixed(2)}px,0)`;
+    tk.leave(stage, c.leave);
+  }
+  frame.steps = steps;
+  frame.fonts = true;
+  return frame;
+}), cfg: CFG } },
+  { title: "정리", trans: "cut", note: "15:17–15:18 · 정리 (1분)\n\"나흘 동안 공감에서 테스트까지 한 바퀴를 돌았어요. 오늘 발표에서 본 것처럼, 시제품은 써 본 사람의 한마디로 자랍니다.\"\n시간이 빠듯하면 이 장은 화면만 띄우고 한 문장으로 넘어가세요.", main: { fn: (function slTmFlow(api) {
   const LABEL = "디지털튜터 양성과정 · 4일차 후반";                                                                                                 // 아래 상태 줄 글
-  const PAGE = "C5 · 14:55";                                                                                                             // 쪽 번호 (비우면 안 보임)
+  const PAGE = "C5 · 15:17";                                                                                                             // 쪽 번호 (비우면 안 보임)
   const TAB = "git log --graph — 나흘의 커밋";                                                                                             // 창 위 제목
   const TITLE = "디자인씽킹, 다섯 번의 커밋";                                                                                                 // 쳐지는 제목
   const ITEMS = [["공감", "학교의 불편을 듣기"], ["정의", "누구의 어떤 문제인지"], ["아이디어", "여러 그릇 떠올리기"], ["시제품", "오늘 만든 첫 버전"], ["테스트", "써 보게 하고 고치기"]];   // 단계 [이름, 설명] 5칸 (이름을 비우면 빠짐)
@@ -3472,9 +3544,9 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "여정판 한 마디", trans: "fade", note: "15:00–15:10 · 여정판\n여정판에 한 마디와 엔딩 장면(오늘 시제품 캡처)을 붙여요. 캡처는 Win+Shift+S로 잘라서 Ctrl+V.\n3~4분 쓰고, 두세 분이 소리 내어 읽어 주시면 수료식이 훨씬 따뜻해져요.", main: { fn: (function slDvQuote(api) {
+  { title: "여정판 (선택)", trans: "fade", note: "(선택) 여정판\n발표가 일찍 끝나서 시간이 남을 때만 써요. 여정판에 한 마디와 엔딩 장면(오늘 시제품 캡처)을 붙입니다. 캡처는 Win+Shift+S로 잘라서 Ctrl+V.\n시간이 없으면 건너뛰고, \"수료 뒤 여정판에 각자 한 마디 남겨 주세요\"로 안내만 하세요.", main: { fn: (function slDvQuote(api) {
   const LABEL = "2026 경기 디지털튜터 양성과정";                 // 위 왼쪽 작은 이름
-  const PAGE = "C5 · 15:00";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
+  const PAGE = "선택";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
   const KICKER = "여정판 한 마디";                         // 따옴표 위 포인트 색 한 줄
   const QUOTE = "나흘 전의 나에게\n한마디 한다면?";     // 인용 문장 (\n = 줄바꿈)
   const WHO = "캡처는 Win + Shift + S → Ctrl + V";                    // 말한 사람 (다음 효과, 비우면 안 보임)
@@ -3542,9 +3614,9 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "수료 메시지", trans: "cut", note: "15:10 · 수료 메시지\n\"오늘 보셨죠. 화면은 AI가 몇 분 만에 만들었지만, 쓸모를 알려 준 건 써 본 사람의 한마디였어요. 학교에 가시면 그 한마디를 들으러 가는 사람이 되어 주세요.\"", main: { fn: (function slTmQuote(api) {
+  { title: "수료 메시지", trans: "cut", note: "15:18 · 수료 메시지\n\"오늘 보셨죠. 화면은 AI가 몇 분 만에 만들었지만, 쓸모를 알려 준 건 써 본 사람의 한마디였어요. 학교에 가시면 그 한마디를 들으러 가는 사람이 되어 주세요.\"", main: { fn: (function slTmQuote(api) {
   const LABEL = "디지털튜터 양성과정 · 4일차 후반";                          // 아래 상태 줄 글
-  const PAGE = "C5 · 15:10";                                      // 쪽 번호 (비우면 안 보임)
+  const PAGE = "C5 · 15:18";                                      // 쪽 번호 (비우면 안 보임)
   const TAB = "git log — 튜터의 일하는 방식";                             // 창 위 제목
   const CMD = "git log -1";                                    // 처음에 쳐지는 명령
   const HASH = "c5e10f2";                                      // 커밋 번호 (장식, 비우면 안 보임)
@@ -3615,9 +3687,9 @@ const SLIDES = [
   frame.fonts = true;
   return frame;
 }), cfg: CFG } },
-  { title: "수료", trans: "fade", note: "15:10–15:20 · 수료\n강사 한마디 → 한 사람씩 한 줄 소감(시간이 부족하면 모둠 대표만) → 박수로 마무리. 수료 처리 안내는 운영진 공지를 따릅니다.", main: { fn: (function slDvClosing(api) {
+  { title: "수료", trans: "fade", note: "15:19–15:20 · 수료\n강사 한마디 → 박수로 마무리. 한 줄 소감은 시간이 남을 때만(모둠 대표 한 명씩). 수료 처리 안내는 운영진 공지를 따릅니다.", main: { fn: (function slDvClosing(api) {
   const LABEL = "2026 경기 디지털튜터 양성과정";                 // 위 왼쪽 작은 이름
-  const PAGE = "수료";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
+  const PAGE = "15:20 수료";                             // 오른쪽 위 쪽 번호 (비우면 안 보임)
   const KICKER = "4일차 · 수료";                          // 제목 위 포인트 색 한 줄
   const TITLE = "수료를\n축하합니다";                           // 큰 인사말 (\n = 줄바꿈)
   const SUB = "오늘 만든 시제품, 다음 주 학교에서 첫 사용자를 만나요";      // 인사말 아래 한 줄
