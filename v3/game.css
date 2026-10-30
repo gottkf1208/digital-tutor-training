@@ -7,3 +7,5 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 .dispatch{position:sticky;top:8px;z-index:4;box-shadow:0 3px 12px #203e5310}
+
+@media(max-width:850px){.rail .quiet{display:inline-block;margin-top:12px;margin-bottom:0;padding:4px;font-size:10px}}
