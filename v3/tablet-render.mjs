@@ -1,9 +1,9 @@
 // Reuse the original workshop tablet asset; render once for all device thumbnails.
-let picture;
-async function renderPicture(){
+const pictures={};
+async function renderPicture(kind){
   const THREE=await import('../v2/vendor/three.module.js');
   const {GLTFLoader}=await import('../v2/vendor/GLTFLoader.js');
-  const gltf=await new GLTFLoader().loadAsync(new URL('../v2/models/galaxy.glb',import.meta.url).href);
+  const gltf=await new GLTFLoader().loadAsync(new URL('../v2/models/'+kind+'.glb',import.meta.url).href);
   const scene=new THREE.Scene(),model=gltf.scene;
   const box=new THREE.Box3().setFromObject(model),center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3());
   model.position.sub(center);scene.add(model);
@@ -17,6 +17,8 @@ async function renderPicture(){
   renderer.dispose();model.traverse(o=>{o.geometry?.dispose();if(o.material){for(const m of Array.isArray(o.material)?o.material:[o.material]){m.map?.dispose();m.dispose();}}});return url;
 }
 export function paintTablets(){
-  picture??=renderPicture();
-  picture.then(src=>document.querySelectorAll('[data-tablet]').forEach(img=>{img.src=src;})).catch(()=>document.querySelectorAll('[data-tablet]').forEach(img=>{img.alt='태블릿 PC · 이미지 로딩 불가';}));
+ for(const kind of ['galaxy','ipad','chromebook']){
+ pictures[kind]??=renderPicture(kind);
+ pictures[kind].then(src=>document.querySelectorAll('[data-tablet="'+kind+'"]').forEach(img=>{img.src=src;})).catch(()=>document.querySelectorAll('[data-tablet="'+kind+'"]').forEach(img=>{img.alt+=' · 이미지 로딩 불가';}));
+ }
 }
