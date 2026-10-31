@@ -1,4 +1,4 @@
-import {paintTablets} from './tablet-render.mjs?v=6';
+import {paintTablets} from './tablet-render.mjs?v=7';
 import {roomLabel,hardwareNames,roomHardware,deviceKind,apps,policies,policyIssues,roster,rooms,inventory,fresh,restore,readyDevice,issues,act,report} from './simulation.mjs?v=6';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],key='dt-assignment-room-v1',e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const plans=Object.fromEntries(rooms.map(r=>[r,{}]));

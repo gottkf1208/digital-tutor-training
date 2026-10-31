@@ -5,6 +5,7 @@ async function renderPicture(kind){
   const {GLTFLoader}=await import('../v2/vendor/GLTFLoader.js');
   const gltf=await new GLTFLoader().loadAsync(new URL('../v2/models/'+kind+'.glb',import.meta.url).href);
   const scene=new THREE.Scene(),model=gltf.scene;
+  if(kind==='ipad')model.rotation.x+=Math.PI/2;
   const box=new THREE.Box3().setFromObject(model),center=box.getCenter(new THREE.Vector3()),size=box.getSize(new THREE.Vector3());
   model.position.sub(center);scene.add(model);
   scene.add(new THREE.HemisphereLight(0xffffff,0x6d8194,3));
