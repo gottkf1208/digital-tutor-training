@@ -15,3 +15,5 @@
 @media(max-width:560px){.group-board{grid-template-columns:1fr}.device-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.tablet-screen{height:85px;max-width:none}.small-photo{width:40px;height:36px}.teacher-request p{font-size:14px}}
 
 #inboxModal{max-width:960px;width:94vw;padding:24px}.inbox-modal-head{display:flex;align-items:center;justify-content:space-between;gap:16px}.inbox-modal-head h2{margin:0}.inbox-modal-head button{margin:0;flex:none}#inboxModal .inbox{margin-top:20px}#inboxModal .section-title h3{display:none}#inboxModal .messages{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:560px){#inboxModal .messages{grid-template-columns:1fr}#inboxModal{padding:18px}}
+
+.inbox-feedback{padding:12px 15px;background:#e7eff4;border-radius:8px;font-size:12px;line-height:1.8}
